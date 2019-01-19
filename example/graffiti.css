@@ -1,0 +1,14 @@
+/*!
+ * vue-graffiti v1.0.0 (https://github.com/goto10hq/vue-graffiti)
+ * (c) 2019 Frohikey / Goto10 
+ * Released under the MIT License.
+ */
+.graffiti-akasaka {
+  font-size: 1em;
+}
+.graffiti-akasaka > span {
+    white-space: pre-wrap;
+    display: inline-block;
+    line-height: 1em;
+}
+

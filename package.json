@@ -1,0 +1,52 @@
+{
+  "name": "vue-graffiti",
+  "version": "1.0.0",
+  "description": "Flying texts all over the place",
+  "keywords": [
+    "vuejs",
+    "animation",
+    "text",
+    "typography"
+  ],
+  "main": "src/app.js",
+  "scripts": {
+    "server": "cross-env node dev-server.js",
+    "dev": "set NODE_ENV=dev&& webpack --progress --watch --mode development",
+    "pro": "set NODE_ENV=production&& webpack --mode production --progress --hide-modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goto10hq/vue-graffiti"
+  },
+  "author": "frohikey",
+  "peerDependencies": {
+    "vue": "^2.5.0",
+    "animejs": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "css-loader": "^2.1.0",
+    "style-loader": "^0.23.1",
+    "stylus-loader": "^3.0.2",
+    "vue-hot-reload-api": "^2.3.1",
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^15.5.1",
+    "webpack": "^4.28.4",
+    "webpack-dev-server": "^3.1.14",
+    "mini-css-extract-plugin": "^0.5.0",
+    "webpack-cli": "^3.2.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-preset-minify": "^0.5.0",
+    "vue-template-compiler": "^2.5.22",
+    "vue": "^2.5.22",
+    "resolve-url-loader": "^3.0.0",
+    "cross-env": "^5.2.0",
+    "animejs": "^3.0.1",
+    "sass-loader": "^7.1.0",
+    "node-sass": "^4.11.0",
+    "vue-slider-component": "^2.8.6"
+  },
+  "license": "MIT"
+}

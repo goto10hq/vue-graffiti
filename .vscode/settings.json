@@ -1,0 +1,8 @@
+{
+    "files.exclude": {
+        "example/app.cs": true,
+        "example/app.js": true,
+        "example/graffiti.css": true,
+        "example/graffiti.js": true
+    }
+}
