@@ -23,7 +23,7 @@ Object.keys(proxyTable).forEach(function (context) {
 })
 
 // serve pure static assets
-app.use('/', express.static('./example'))
+app.use('/', express.static('./docs'))
 //app.use('/blob', express.static('./docs/blob'))
 
 var uri = 'http://localhost:' + port

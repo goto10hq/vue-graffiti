@@ -22,7 +22,25 @@
         validator(value) {
           return value != null && value.length == 2
         }
-      }      
+      },
+      duration1: {
+        type: Number,
+        default() {
+          return 450
+        },
+        validator(value) {
+          return value > 0
+        }
+      },
+      delay1: {
+        type: Number,
+        default() {
+          return 70
+        },
+        validator(value) {
+          return value > 0
+        }
+      }
     },
     data () {
       return {
@@ -50,9 +68,9 @@
             opacity: [0, 1],
             translateZ: 0,
             easing: 'easeOutExpo',
-            duration: 450,
+            duration: this.duration1,
             delay: function (el, i) {
-              return 70 * i
+              return self.delay1 * i
             }
           })
           .add({

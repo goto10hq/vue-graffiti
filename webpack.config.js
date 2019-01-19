@@ -18,8 +18,8 @@ module.exports = {
     graffiti: './src/index.js'
   },
   output: {
-    path: __dirname + '/example',
-    publicPath: './example/',
+    path: __dirname + '/docs',
+    publicPath: './docs/',
     filename: '[name].js',
     library: 'vue-graffiti',
     libraryTarget: 'umd',

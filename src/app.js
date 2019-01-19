@@ -1,4 +1,4 @@
-require('../example/example.css')
+require('../docs/example.css')
 
 import Example from './example.vue'
 import Vue from 'vue'
