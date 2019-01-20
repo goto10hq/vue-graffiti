@@ -1,8 +1,12 @@
 {
     "files.exclude": {
-        "example/app.cs": true,
-        "example/app.js": true,
-        "example/graffiti.css": true,
-        "example/graffiti.js": true
+        "docs/app.css": true,
+        "docs/app.js": true,
+        "docs/graffiti.css": true,
+        "docs/graffiti.js": true
+    },
+    "search.exclude": {
+        "docs/app.js": true,
+        "docs/graffiti.js": true
     }
 }

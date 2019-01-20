@@ -1,7 +1,7 @@
-import GraffitiAkasaka from './graffiti-akasaka.vue'
+import GraffitiSunshine from './graffiti-sunshine.vue'
 
 const VueGraffiti = {
-  GraffitiAkasaka
+  GraffitiSunshine
 }
 
 module.exports = VueGraffiti

@@ -2,7 +2,7 @@
   <div
     v-html="text"
     :id="id"
-    class="graffiti-akasaka"
+    class="graffiti-sunshine"
   ></div>
 </template>
 <script>
@@ -11,7 +11,7 @@
   import TextUtils from './text-utils.js'
 
   export default {
-    name: 'GraffitiAkasaka',
+    name: 'GraffitiSunshine',
     props: {
       texts: {
         type: Array,
@@ -80,7 +80,7 @@
     methods: {
       createTimeline () {
         let self = this
-        const target = '#' + this.id + '.graffiti-akasaka span'
+        const target = '#' + this.id + '.graffiti-sunshine span'
 
         this.timeline = anime.timeline()
 
@@ -125,12 +125,10 @@
     }
   }
 </script>
-<style lang="scss">
-  .graffiti-akasaka {    
-    & > span {
-      white-space: pre-wrap;
-      display: inline-block;      
-    }
+<style lang="css">
+  .graffiti-sunshine > span {
+    white-space: pre-wrap;
+    display: inline-block;
   }
 </style>
 
