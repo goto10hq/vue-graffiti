@@ -19,7 +19,7 @@
           return []
         }
       },
-      scale1: {
+      scale: {
         type: Array,
         default () {
           return [8, 1]
@@ -87,7 +87,7 @@
         this.timeline
           .add({
             targets: target,
-            scale: this.scale1,
+            scale: this.scale,
             opacity: [0, 1],
             translateZ: 0,
             easing: 'easeOutExpo',

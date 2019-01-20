@@ -3,7 +3,7 @@
     <h2>sunshine</h2>
     <div class="graffiti-example graffiti-example-sunshine">
       <graffiti-sunshine
-        :scale1="[sunshineScale1[1],sunshineScale1[0]]"
+        :scale="[sunshineScale[1],sunshineScale[0]]"
         :duration1="sunshineDuration1"
         :delay1="sunshineDelay1"
         :duration2="sunshineDuration2"
@@ -11,9 +11,9 @@
         :texts="texts"
       ></graffiti-sunshine>       
     </div>
-    <pre>scale1: [{{sunshineScale1[1]}}, {{sunshineScale1[0]}}]</pre>
+    <pre>scale: [{{sunshineScale[1]}}, {{sunshineScale[0]}}]</pre>
     <vue-slider
-      v-model="sunshineScale1"
+      v-model="sunshineScale"
       formatter="{value}"
       mergeFormatter="[{value2}, {value1}]"
       :min="1"
@@ -73,7 +73,7 @@
           'Two things are infinite:\nthe universe and human stupidity.',
           'I\'m not sure about the universe.\n- Albert Einstein'
         ],
-        sunshineScale1: [1, 8],
+        sunshineScale: [1, 8],
         sunshineDuration1: 450,
         sunshineDelay1: 70,
         sunshineDuration2: 1000,
