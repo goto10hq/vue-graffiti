@@ -89,7 +89,8 @@ ul {
 
 .graffiti-example-boom {
   background-color: #D9A300;
-  color: #FFF; }
+  color: #FFF;
+  padding: 60px 0; }
 
 @media screen and (max-width: 700px) {
   html,

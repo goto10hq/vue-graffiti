@@ -70,7 +70,7 @@
     data () {
       return {
         texts: [
-          'Two things are infinite:\nthe universe and human stupidity',
+          'Two things are infinite:\nthe universe and human stupidity.',
           'I\'m not sure about the universe.\n- Albert Einstein'
         ],
         sunshineScale1: [1, 8],
