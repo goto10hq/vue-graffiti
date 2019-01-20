@@ -9,7 +9,7 @@
         :duration2="sunshineDuration2"
         :delay2="sunshineDelay2"
         :texts="texts"
-      ></graffiti-sunshine>
+      ></graffiti-sunshine>       
     </div>
     <pre>scale1: [{{sunshineScale1[1]}}, {{sunshineScale1[0]}}]</pre>
     <vue-slider
@@ -43,18 +43,28 @@
       v-model="sunshineDelay2"
       :min="1"
       :max="2000"
-    ></vue-slider>
-  </div>
+    ></vue-slider>  
+   <div>
+    <h2>boom</h2>
+    <div class="graffiti-example graffiti-example-boom">
+      <graffiti-boom
+        :texts="texts"
+      ></graffiti-boom>
+    </div>    
+  </div> 
+  </div> 
 </template>
 
 <script>
   import Vue from 'vue'
   import GraffitiSunshine from './graffiti-sunshine.vue'
+  import GraffitiBoom from './graffiti-boom.vue'
   import VueSlider from 'vue-slider-component'
 
   export default {
     components: {
       GraffitiSunshine,
+      GraffitiBoom,
       VueSlider
     },
     data () {

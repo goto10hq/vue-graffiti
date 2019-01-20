@@ -87,6 +87,10 @@ ul {
   background-color: #17aaaa;
   color: #FFF; }
 
+.graffiti-example-boom {
+  background-color: #D9A300;
+  color: #FFF; }
+
 @media screen and (max-width: 700px) {
   html,
   body {
@@ -97,5 +101,17 @@ ul {
 .graffiti-sunshine > span {
   white-space: pre-wrap;
   display: inline-block;
+}
+
+.graffiti-boom {
+  position: relative;
+}
+.graffiti-boom > div {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: -0.5em;
+  right: 0;
+  opacity: 0;
 }
 

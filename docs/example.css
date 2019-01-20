@@ -95,6 +95,11 @@ html {
     background-color: #17aaaa;
     color: #FFF;    
   }
+
+  .graffiti-example-boom {
+    background-color: #D9A300;
+    color: #FFF;    
+  }
   
   @media screen and(max-width: 700px) {
       html,

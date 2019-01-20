@@ -76,13 +76,13 @@
     mounted () {
       this.id = 'graffiti-' + this._uid
       this.changeText()
-    },
+    },    
     methods: {
       createTimeline () {
         let self = this
         const target = '#' + this.id + '.graffiti-sunshine span'
 
-        this.timeline = anime.timeline()
+        this.timeline = anime.timeline({loop: true})
 
         this.timeline
           .add({
@@ -107,7 +107,7 @@
             }
           })
       },
-      changeText () {
+      changeText () {        
         let self = this
         let newIndex = this.index + 1
         if (newIndex >= this.texts.length || newIndex < 0) {
@@ -118,7 +118,7 @@
         this.text = TextUtils.getSplittedText(this.texts[this.index])
 
         this.$nextTick(() => {
-          anime.remove('.letter')
+          anime.remove('#' + self.id)
           self.createTimeline()
         })
       }
