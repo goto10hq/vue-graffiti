@@ -40,6 +40,24 @@
         validator(value) {
           return value > 0
         }
+      },
+      duration2: {
+        type: Number,
+        default() {
+          return 1000
+        },
+        validator(value) {
+          return value > 0
+        }
+      },
+      delay2: {
+        type: Number,
+        default() {
+          return 1000
+        },
+        validator(value) {
+          return value > 0
+        }
       }
     },
     data () {
@@ -76,9 +94,9 @@
           .add({
             targets: target,
             opacity: 0,
-            duration: 1000,
+            duration: this.duration2,
             easing: 'easeOutExpo',
-            delay: 1000,
+            delay: this.delay2,
             complete: function (anim) {
               self.changeText()
             }
