@@ -94,12 +94,8 @@ ul {
   #wrapper {
     width: 100%; } }
 
-.graffiti-akasaka {
-  font-size: 1em;
-}
 .graffiti-akasaka > span {
-    white-space: pre-wrap;
-    display: inline-block;
-    line-height: 1em;
+  white-space: pre-wrap;
+  display: inline-block;
 }
 
