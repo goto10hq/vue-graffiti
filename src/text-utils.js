@@ -1,5 +1,5 @@
 export default {
-    getSplittedText(text) {
+    getSplitText (text) {
         if (text === null) {
             return ''
         }

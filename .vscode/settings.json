@@ -8,5 +8,10 @@
     "search.exclude": {
         "docs/app.js": true,
         "docs/graffiti.js": true
-    }
+    },
+    "cSpell.words": [
+        "animejs",
+        "frohikey",
+        "vuejs"
+    ]
 }

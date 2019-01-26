@@ -16,6 +16,60 @@
         default () {
           return []
         }
+      },
+      opacityIn: {
+        type: Array,
+        default () {
+          return [0, 1]
+        },
+        validator (value) {
+          return value != null && value.length == 2
+        }
+      },
+      scaleIn: {
+        type: Array,
+        default () {
+          return [0.2, 1]
+        },
+        validator (value) {
+          return value != null && value.length == 2
+        }
+      },
+      scaleOut: {
+        type: Number,
+        default () {
+          return 3
+        },
+        validator (value) {
+          return value >= 0
+        }
+      },
+      durationIn: {
+        type: Number,
+        default() {
+          return 800
+        },
+        validator (value) {
+          return value >= 0
+        }
+      },
+      durationOut: {
+        type: Number,
+        default() {
+          return 600
+        },
+        validator (value) {
+          return value >= 0
+        }
+      },
+      delay: {
+        type: Number,
+        default() {
+          return 500
+        },
+        validator (value) {
+          return value >= 0
+        }
       }
     },
     data () {
@@ -39,30 +93,22 @@
       createTimeline () {
         let self = this        
 
-        this.timeline = anime.timeline()
-
-        var ml4 = {}
-        ml4.opacityIn = [0, 1]
-        ml4.scaleIn = [0.2, 1]
-        ml4.scaleOut = 3
-        ml4.durationIn = 800
-        ml4.durationOut = 600
-        ml4.delay = 500
+        this.timeline = anime.timeline()        
 
         this.timeline
           .add({
             targets: self.target,
-            opacity: ml4.opacityIn,
-            scale: ml4.scaleIn,
-            duration: ml4.durationIn
+            opacity: this.opacityIn,
+            scale: this.scaleIn,
+            duration: this.durationIn
           })
           .add({
             targets: self.target,
             opacity: 0,
-            scale: ml4.scaleOut,
-            duration: ml4.durationOut,
+            scale: this.scaleOut,
+            duration: this.durationOut,
             easing: 'easeInExpo',
-            delay: ml4.delay,
+            delay: this.delay,
             complete: function (anim) {
               self.changeText()
             }
