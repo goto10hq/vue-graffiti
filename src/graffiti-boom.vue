@@ -30,10 +30,14 @@
       this.id = 'graffiti-' + this._uid
       this.changeText()
     },
+    computed: {
+      target () {
+        return '#' + this.id + '.graffiti-boom div'
+      }
+    },
     methods: {
       createTimeline () {
-        let self = this
-        const target = '#' + this.id + '.graffiti-boom div'
+        let self = this        
 
         this.timeline = anime.timeline()
 
@@ -47,13 +51,13 @@
 
         this.timeline
           .add({
-            targets: target,
+            targets: self.target,
             opacity: ml4.opacityIn,
             scale: ml4.scaleIn,
             duration: ml4.durationIn
           })
           .add({
-            targets: target,
+            targets: self.target,
             opacity: 0,
             scale: ml4.scaleOut,
             duration: ml4.durationOut,
@@ -75,7 +79,7 @@
         this.text = this.texts[this.index]
 
         this.$nextTick(() => {
-          anime.remove('#' + self.id)
+          anime.remove(self.target)
           self.createTimeline()
         })
       }

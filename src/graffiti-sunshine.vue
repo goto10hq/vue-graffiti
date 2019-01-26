@@ -1,9 +1,5 @@
 <template>
-  <div
-    v-html="text"
-    :id="id"
-    class="graffiti-sunshine"
-  ></div>
+  <div v-html="text" :id="id" class="graffiti-sunshine"></div>
 </template>
 <script>
   import Vue from 'vue'
@@ -76,17 +72,21 @@
     mounted () {
       this.id = 'graffiti-' + this._uid
       this.changeText()
-    },    
+    },
+    computed: {
+      target () {
+        return '#' + this.id + '.graffiti-sunshine span'
+      }
+    },
     methods: {
       createTimeline () {
         let self = this
-        const target = '#' + this.id + '.graffiti-sunshine span'
 
-        this.timeline = anime.timeline({loop: true})
+        this.timeline = anime.timeline({ loop: true })
 
         this.timeline
           .add({
-            targets: target,
+            targets: this.target,
             scale: this.scale,
             opacity: [0, 1],
             translateZ: 0,
@@ -97,7 +97,7 @@
             }
           })
           .add({
-            targets: target,
+            targets: this.target,
             opacity: 0,
             duration: this.duration2,
             easing: 'easeOutExpo',
@@ -107,7 +107,7 @@
             }
           })
       },
-      changeText () {        
+      changeText () {
         let self = this
         let newIndex = this.index + 1
         if (newIndex >= this.texts.length || newIndex < 0) {
@@ -118,7 +118,7 @@
         this.text = TextUtils.getSplittedText(this.texts[this.index])
 
         this.$nextTick(() => {
-          anime.remove('#' + self.id)
+          anime.remove(self.target)
           self.createTimeline()
         })
       }
