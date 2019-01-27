@@ -11,7 +11,7 @@ export default {
             if (c === '\n') {
                 result += '<br />'
             } else {
-                result += '<span>' + c + '</span>'
+                result += '<span class=\'l\'>' + c + '</span>'
             }
         }
         return result
@@ -26,9 +26,9 @@ export default {
         for (let i = 0; i < a.length; i++) {
             var c = a[i]
             if (c === '\n') {
-                result += ''
+                result += ' '
             } else {
-                result += '<span>' + c + '</span>'
+                result += '<span class=\'l\'>' + c + '</span>'
             }
         }
         return result

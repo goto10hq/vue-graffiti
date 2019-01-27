@@ -1,7 +1,9 @@
 <template>
   <div :id="id" class="graffiti-hacker">
-    <span class="line line1"></span>
-    <span class="letters" v-html="text">Hello Goodbye</span>
+    <span class="text-wrapper">
+      <span class="line line1"></span>
+      <span class="letters" v-html="text">Hello Goodbye</span>
+    </span>
   </div>
 </template>
 <script>
@@ -9,6 +11,7 @@
   import Vue from 'vue'
   import anime from 'animejs'
   import TextUtils from './text-utils.js'
+  import $ from 'cash-dom'
 
   export default {
     name: 'GraffitiHacker',
@@ -35,18 +38,13 @@
     computed: {
       target () {
         return [
-          '#' + this.id + '.graffiti-hacker > .line',
-          '#' + this.id + '.graffiti-hacker > .letters > span'
+          '#' + this.id + '.graffiti-hacker > .text-wrapper > .line',
+          '#' + this.id + '.graffiti-hacker .l',
+          '#' + this.id + '.graffiti-hacker'
         ]
       }
     },
     methods: {
-      getLettersWidth () {
-        let el = document.getElementById(this.id)
-        let letters = el.getElementsByClassName('letters')[0]
-        return letters.clientWidth
-        //return letters.getBoundingClientRect().width
-      },
       createTimeline () {
         let self = this
 
@@ -62,19 +60,31 @@
           })
           .add({
             targets: self.target[0],
-            translateX: [0, this.getLettersWidth()],
+            translateX: [0, $('#' + self.id + ' .letters').width() + 5],
             easing: 'easeOutExpo',
             duration: 700,
             delay: 100
           })
+          .add(
+            {
+              targets: self.target[1],
+              opacity: [0, 1],
+              easing: 'easeOutExpo',
+              duration: 600,
+              delay: function (el, i) {
+                return 6 * (i + 1)
+              }
+            },
+            '-=700'
+          )
           .add({
-            targets: self.target[1],
-            opacity: [0, 1],
+            targets: self.target[2],
+            opacity: 0,
+            duration: 1000,
             easing: 'easeOutExpo',
-            duration: 600,
-            offset: '-=775',
-            delay: function (el, i) {
-              return 34 * (i + 1)
+            delay: 1000,
+            complete: function (anim) {
+              self.changeText()
             }
           })
       },
@@ -89,8 +99,11 @@
         this.text = TextUtils.getSplitText(this.texts[this.index])
 
         this.$nextTick(() => {
-          // TODO: implement
-          //anime.remove(self.target)
+          for (let x in self.target) {
+            anime.remove(self.target[x])
+          }
+          $(self.target[2]).css('opacity', 1)
+          $(self.target[0]).css('transform', 'scaleY(1) translateX(0px)')
           self.createTimeline()
         })
       }
@@ -98,7 +111,7 @@
   }
 </script>
 <style lang="css">
-  .graffiti-hacker {
+  .graffiti-hacker > .text-wrapper {
     position: relative;
     display: inline-block;
     padding-top: 0.1em;
@@ -106,7 +119,7 @@
     padding-bottom: 0.15em;
   }
 
-  .graffiti-hacker > .line {
+  .graffiti-hacker > .text-wrapper > .line {
     opacity: 0;
     position: absolute;
     left: 0;
@@ -116,12 +129,12 @@
     transform-origin: 0 50%;
   }
 
-  .graffiti-hacker > .line1 {
+  .graffiti-hacker > .text-wrapper > .line1 {
     top: 0;
     left: 0;
   }
 
-  .graffiti-hacker > .letters > span {
+  .graffiti-hacker > .text-wrapper > .letters > .l {
     white-space: pre-wrap;
     display: inline-block;
     line-height: 1em;

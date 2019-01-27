@@ -120,14 +120,14 @@ ul {
   opacity: 0;
 }
 
-.graffiti-hacker {
+.graffiti-hacker > .text-wrapper {
   position: relative;
   display: inline-block;
   padding-top: 0.1em;
   padding-right: 0.05em;
   padding-bottom: 0.15em;
 }
-.graffiti-hacker > .line {
+.graffiti-hacker > .text-wrapper > .line {
   opacity: 0;
   position: absolute;
   left: 0;
@@ -136,11 +136,11 @@ ul {
   background-color: #fff;
   transform-origin: 0 50%;
 }
-.graffiti-hacker > .line1 {
+.graffiti-hacker > .text-wrapper > .line1 {
   top: 0;
   left: 0;
 }
-.graffiti-hacker > .letters > span {
+.graffiti-hacker > .text-wrapper > .letters > .l {
   white-space: pre-wrap;
   display: inline-block;
   line-height: 1em;
