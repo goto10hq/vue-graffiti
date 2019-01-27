@@ -115,7 +115,7 @@
         }
 
         this.index = newIndex
-        this.text = TextUtils.getSplitText(this.texts[this.index])
+        this.text = TextUtils.getSplitMultiText(this.texts[this.index])
 
         this.$nextTick(() => {
           anime.remove(self.target)

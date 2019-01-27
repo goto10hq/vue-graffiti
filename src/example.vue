@@ -70,19 +70,29 @@
     <vue-slider v-model="boomDurationOut" :min="0" :max="1000"></vue-slider>
     <pre>delay: {{boomDelay}}</pre>
     <vue-slider v-model="boomDelay" :min="0" :max="1000"></vue-slider>
-  </div>
+    <div>
+      <h2>hacker</h2>
+      <div class="graffiti-example graffiti-example-hacker">
+        <graffiti-hacker
+          :texts="texts"          
+        ></graffiti-hacker>
+      </div>
+    </div>
+  </div>  
 </template>
 
 <script>
   import Vue from 'vue'
   import GraffitiSunshine from './graffiti-sunshine.vue'
   import GraffitiBoom from './graffiti-boom.vue'
+  import GraffitiHacker from './graffiti-hacker.vue'
   import VueSlider from 'vue-slider-component'
 
   export default {
     components: {
       GraffitiSunshine,
       GraffitiBoom,
+      GraffitiHacker,
       VueSlider
     },
     data () {
